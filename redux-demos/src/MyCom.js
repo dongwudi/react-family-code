@@ -4,12 +4,13 @@ import { bindActionCreators } from 'redux';
 
 class MyCom extends Component {
   render() {
-    const { change_name, name } = this.props;
+    const { change_name, asyncChange_name, name } = this.props;
     return (
       <Fragment>
         {name}
         <hr />
         <div onClick={change_name}>changename</div>
+        <div onClick={asyncChange_name}>changename async</div>
       </Fragment>
     )
   }
@@ -22,6 +23,14 @@ function change_name() {
   }
 }
 
+function asyncChange_name() {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(change_name());
+    }, 1000);
+  };
+}
+
 function mapStateToProps(state) {
   return {
     name: state.name
@@ -29,7 +38,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ change_name }, dispatch)
+  return bindActionCreators({ change_name, asyncChange_name }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyCom)

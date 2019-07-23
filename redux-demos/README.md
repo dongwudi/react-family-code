@@ -113,4 +113,32 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(MyCom)
 ```
 
-## 异步action
+### redux-thunk处理异步action
+
+![](http://ww4.sinaimg.cn/large/006tNc79ly1g5a82gjkaej30wc0okdh8.jpg)
+
+```
+import { createStore, applyMiddleware } from 'redux';
+import reducer from './reducer';
+import thunk from 'redux-thunk';
+
+export default createStore(
+  reducer,
+  applyMiddleware(thunk)
+)
+-------------------------------------------------
+function change_name() {
+  return {
+    type: 'CHANGE_NAME',
+    name: 'lisi'
+  }
+}
+
+function asyncChange_name() {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(change_name());
+    }, 1000);
+  };
+}
+```
