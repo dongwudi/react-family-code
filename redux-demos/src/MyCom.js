@@ -9,8 +9,8 @@ class MyCom extends Component {
       <Fragment>
         {name}
         <hr />
-        <div onClick={change_name}>changename</div>
-        <div onClick={asyncChange_name}>changename async</div>
+        <div onClick={change_name.bind(this)}>changename</div>
+        <div onClick={asyncChange_name.bind(this)}>changename async</div>
       </Fragment>
     )
   }
