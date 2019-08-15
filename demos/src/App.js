@@ -1,25 +1,36 @@
 import React from "react";
-import logo from "./logo.svg";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
+
+import State from "./State";
+import PropsCom from "./Props";
+import LifeCycle from "./LifeCycle";
+import EventHandle from './EventHandle';
+import ContextCom from './ContextCom';
+import ChildrenCom from './ChildrenCom';
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<Router>
+			<div className="App">
+				<div className="navs">
+					<Link to="/state">State</Link> <br/>
+					<Link to="/props">Props</Link> <br/>
+					<Link to="/lifecycle">lifecycle</Link> <br/>
+					<Link to="/event">eventHandle</Link> <br/>
+					<Link to="/context">context</Link> <br/>
+					<Link to="/children">children</Link> <br/>
+				</div>
+				<div className="conts">
+					<Route path="/state" component={State} />
+					<Route path="/props" component={PropsCom} />
+					<Route path="/lifecycle" component={LifeCycle} />
+					<Route path="/event" component={EventHandle} />
+					<Route path="/context" component={ContextCom} />
+					<Route path="/children" component={ChildrenCom} />
+				</div>
+			</div>
+		</Router>
 	);
 }
 
