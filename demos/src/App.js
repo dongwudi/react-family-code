@@ -9,6 +9,7 @@ import EventHandle from './EventHandle';
 import ContextCom from './ContextCom';
 import ChildrenCom from './ChildrenCom';
 import AppRedux from "./Todos/components/App";
+import HookCom from './Hooks';
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 					<Link to="/context">context</Link> <br/>
 					<Link to="/children">children</Link> <br/>
 					<Link to="/todos">todos</Link> <br/>
+					<Link to="/hook">hook</Link> <br/>
 				</div>
 				<div className="conts">
 					<Route path="/state" component={State} />
@@ -31,6 +33,7 @@ function App() {
 					<Route path="/context" component={ContextCom} />
 					<Route path="/children" component={ChildrenCom} />
 					<Route path="/todos" component={AppRedux} />
+					<Route path="/hook" component={HookCom} />
 				</div>
 			</div>
 		</Router>
