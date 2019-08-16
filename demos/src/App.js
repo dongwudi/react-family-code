@@ -8,6 +8,7 @@ import LifeCycle from "./LifeCycle";
 import EventHandle from './EventHandle';
 import ContextCom from './ContextCom';
 import ChildrenCom from './ChildrenCom';
+import AppRedux from "./Todos/components/App";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Link to="/event">eventHandle</Link> <br/>
 					<Link to="/context">context</Link> <br/>
 					<Link to="/children">children</Link> <br/>
+					<Link to="/todos">todos</Link> <br/>
 				</div>
 				<div className="conts">
 					<Route path="/state" component={State} />
@@ -28,6 +30,7 @@ function App() {
 					<Route path="/event" component={EventHandle} />
 					<Route path="/context" component={ContextCom} />
 					<Route path="/children" component={ChildrenCom} />
+					<Route path="/todos" component={AppRedux} />
 				</div>
 			</div>
 		</Router>
