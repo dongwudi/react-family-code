@@ -10,6 +10,7 @@ import ContextCom from './ContextCom';
 import ChildrenCom from './ChildrenCom';
 import AppRedux from "./Todos/components/App";
 import HookCom from './Hooks';
+import DomDiffCom from './DomDiff';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					<Link to="/children">children</Link> <br/>
 					<Link to="/todos">todos</Link> <br/>
 					<Link to="/hook">hook</Link> <br/>
+					<Link to="/diff">dom diff</Link> <br/>
 				</div>
 				<div className="conts">
 					<Route path="/state" component={State} />
@@ -34,6 +36,7 @@ function App() {
 					<Route path="/children" component={ChildrenCom} />
 					<Route path="/todos" component={AppRedux} />
 					<Route path="/hook" component={HookCom} />
+					<Route path="/diff" component={DomDiffCom} />
 				</div>
 			</div>
 		</Router>

@@ -8,6 +8,7 @@ import WordAdder from "./WordAdder";
 
 class State extends Component {
 	render() {
+		// console.log(this)
 		return (
 			<Fragment>
 				<div className="navs1">
