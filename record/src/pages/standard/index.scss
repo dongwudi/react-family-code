@@ -1,0 +1,97 @@
+.operate-area {
+	width: 100%;
+	height: auto;
+	padding: 20px 0;
+	background: #f4f5fa;
+}
+
+.ui-title {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	padding: 10px 0;
+	border-bottom: 1px solid #d4d4d4;
+	h2 {
+		font: 400 18px/1.5 STHei, "Microsoft YaHei", "WenQuanYi Micro Hei";
+	}
+}
+
+@mixin clearfix {
+  &::after {
+		clear: both;
+		content: ".";
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+}
+
+.record-search-date {
+	padding: 15px 20px;
+	background-color: #f4f5fa;
+	border: none;
+	.ant-calendar-picker {
+		width: 250px;
+	}
+  @include clearfix;
+}
+
+.ui-form-label {
+	float: left;
+	text-align: left;
+	width: 55px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: 700;
+}
+
+@mixin li-l {
+  li{
+    color: #000;
+		padding: 0 10px;
+		border-radius: 2px;
+		cursor: pointer;
+		margin: 3px 2px 3px 0;
+		height: 26px;
+		line-height: 26px;
+		box-sizing: border-box;
+		float: left;
+		list-style: none;
+		&:hover {
+			background-color: #ebebeb;
+    }
+    &.active {
+			color: #fff;
+			background-color: #999;
+		}
+  }
+}
+
+.quick-link-date {
+	margin-left: 20px;
+	@include li-l;
+}
+
+.record-search-params .record-search-cate {
+  border-top: 1px dashed #d4d4d4;
+}
+
+.record-search-cate, .record-search-state{
+  padding: 15px 20px;
+  @include clearfix;
+}
+
+.ui-form-item-content{
+  @include li-l;
+}
+
+p{
+	margin: 0;
+}
+
+a{
+	color: #000;
+	&:hover{
+		text-decoration: underline;
+	}
+}

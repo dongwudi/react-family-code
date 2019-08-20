@@ -1,0 +1,20 @@
+.nav-top {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: #1e1b29;
+	border-bottom: 1px #2a2639 solid;
+	color: #a5a4a9;
+	.wrap {
+		width: 990px;
+    margin: 0 auto;
+    text-align: right;
+    .login-out{
+      margin-left: 20px;
+      cursor: pointer;
+      height: 32px;
+      line-height: 32px;
+    }
+	}
+}
